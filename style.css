@@ -444,6 +444,25 @@ body {
     gap: 2rem;
 }
 
+/* Mobile gallery - horizontal scroll support */
+@media (max-width: 768px) {
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        overflow-x: auto;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        padding: 0 0.5rem;
+    }
+}
+
 .gallery-card {
     background: #ffffff;
     border-radius: 28px;
@@ -836,10 +855,6 @@ body {
 
     .section-title {
         font-size: 2.3rem;
-    }
-
-    .gallery-grid {
-        gap: 1.2rem;
     }
 
     .quotes-container {
