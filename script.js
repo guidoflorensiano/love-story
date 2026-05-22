@@ -105,6 +105,18 @@ const lightboxImg = document.getElementById('lightbox-img');
 const lightboxClose = document.getElementById('lightbox-close');
 const galleryImages = document.querySelectorAll('.gallery-media img');
 
+// Background Music - autoplay on page load
+const bgMusic = document.getElementById('bgMusic');
+window.addEventListener('DOMContentLoaded', () => {
+    bgMusic.volume = 0.5;
+    bgMusic.play().catch(() => {
+        // If autoplay is blocked, try on first click
+        document.addEventListener('click', () => {
+            bgMusic.play();
+        }, { once: true });
+    });
+});
+
 // Open lightbox when image is clicked
 galleryImages.forEach(img => {
     img.style.cursor = 'pointer';
